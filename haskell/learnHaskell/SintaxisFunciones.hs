@@ -25,6 +25,16 @@ second (_, y, _) = y
 third :: (a, b, c) -> c
 third (_, _, z) = z
 
+head' :: [a] -> a
+head' [] = error "NotImplemented"
+head' (xs:_) = xs
+
+tell :: (Show a) => [a] -> String
+tell []       = "La lista está vacía"
+tell (x:[])   = "La lista tiene un elemento: " ++ show x
+tell (x:y:[]) = "La lista tiene dos elementos: " ++ show x ++ " y " ++ show y
+tell (x:y:_)  = "La lista es larga. Los primeros dos elementos son: " ++ show x ++ " y " ++ show y
+
 --deleteDuplicateZero [] = []
 --deleteDuplicateZero x : [] = x
 --deleteDuplicateZero x : y : _ = 
