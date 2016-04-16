@@ -1,0 +1,5 @@
+open System
+
+let list = [1..100]
+
+list |> List.rev |> List.head

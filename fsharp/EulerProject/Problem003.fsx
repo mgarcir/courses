@@ -1,10 +1,5 @@
 open System
 
-let seq = Seq.unfold (fun x -> Some((0.5 * x), x + 1.0)) 1.0
-
-seq |> Seq.takeWhile (fun x -> x < 1000.0) |> printfn "%A"
-
-
 let limit = 100000
 
 let rec generatePrimeSeq list = function
@@ -16,3 +11,8 @@ let rec generatePrimeSeq list = function
 
 let seqc = generatePrimeSeq [] [2..10000] |> List.rev
 printfn "%A" seqc
+
+
+let generatePrimeSeq' = Seq.unfold (fun (current, next) -> Some(next, (next, current + next))) (1,1)
+generatePrimeSeq' |> Seq.takeWhile (fun x -> x < 1000) |> printfn "%A"
+

@@ -1,0 +1,8 @@
+open System
+
+let list = [1..9999]
+
+let rec lastButOne xs =
+    if(List.length xs = 2) List.head xs else lastButOne (List.tail xs)
+
+list |> lastButOne |> printfn "%d" 
