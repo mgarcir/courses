@@ -1,0 +1,7 @@
+Open system
+
+[for x in 1..1000 do
+   if x%3 = 0 & x%5 = 0 then yield(x)] |> List.sum
+
+[1..100] |> List.filter (fun x -> x%3 = 0 & x%5 = 0)
+

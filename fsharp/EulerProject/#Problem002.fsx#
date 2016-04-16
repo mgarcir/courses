@@ -1,0 +1,10 @@
+open System
+
+//Generate Fib secuence
+let rec fib list index =
+    if index < 10
+       let next = head
+       let result = next :: fib       let next = head                                                                  |.fsx
+       
+    else
+       list

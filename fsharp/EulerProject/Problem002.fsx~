@@ -1,0 +1,11 @@
+open System
+
+let rec fib list index =
+    if index < 10 then
+       let next = 3
+       let newList = next :: list
+       fib newList (index + 1)
+    else
+        list
+
+fib [1..2] 0

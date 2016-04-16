@@ -4,10 +4,6 @@ lucky :: (Integral a) => a -> String
 lucky 7 = "¡El siete de la suerte!"
 lucky x = "Lo siento, ¡no es tu día de suerte!"
 
---factorial :: (Integral a) => a -> a
---factorial 0 = 1
---factorial n = n * (factorial (n - 1))
-
 factorial :: (Integral a) => a -> a
 factorial 0 = 1
 factorial x = x * factorial(x-1)
@@ -57,3 +53,23 @@ scanSum ::  [Int] -> [Int]
 scanSum [] = []
 scanSum (a:[]) = a:[]
 scanSum (a:b:as) = a : scanSum ((a+b):as)
+
+bmiTell :: (RealFloat a) => a -> a -> String
+bmiTell weight height
+    | bmi <= skinny = "Tienes infrapeso ¿Eres emo?"
+    | bmi <= normal = "Supuestamente eres normal... Espero que seas feo."
+    | bmi <= fat    = "¡Estás gordo! Pierde algo de peso gordito."
+    | otherwise     = "¡Enhorabuena, eres una ballena!"
+    where bmi = weight / height ^ 2
+          (skinny, normal, fat) = (18.5, 25.0, 30.0)
+
+cylinder :: (RealFloat a) => a -> a -> a
+cylinder r h =
+    let sideArea = 2 * pi * r * h
+        topArea = pi * r ^2
+    in  sideArea + 2 * topArea
+
+describeList :: [a] -> String
+describeList xs = "La lista es" ++ case xs of []  -> "una lista vacía."
+                                              [x] -> "una lista unitaria."
+                                              xs  -> "una lista larga."
