@@ -8,3 +8,4 @@ boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
 length' xs = sum [1 | _ <- xs]
 
 generateTriangules = [ (x,y,z) | x <- [1..10], y <- [1..10], z <- [1..10] , y^2 + x^2 == z^2, x + y +z == 24]
+

@@ -1,0 +1,531 @@
+Hours of hacking await!
+If I break, you can:
+  1. Restart:           M-x haskell-process-restart
+  2. Configure logging: C-h v haskell-process-log (useful for debugging)
+  3. General config:    M-x customize-mode
+  4. Hide these tips:   C-h v haskell-process-show-debug-tips
+Changed directory: /Volumes/Internet/Cursos/courses/haskell/learnHaskell/
+λ> :reload
+Ok, modules loaded: none.
+λ> :l Ex
+Ok, modules loaded: none.
+λ> :l Examples.hs
+[1 of 1] Compiling Main             ( Examples.hs, interpreted )
+
+
+
+
+
+
+
+
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples.hs, interpreted )
+
+
+
+
+
+
+
+
+
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples.hs, interpreted )
+
+
+
+
+
+
+
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples.hs, interpreted )
+
+
+
+
+
+
+
+Failed, modules loaded: none.
+λ> let bmi weight height = weight / height ^ 2
+λ> bmi 23.0 23.0
+4.3478260869565216e-2
+λ> :reload
+[1 of 1] Compiling Main             ( Examples.hs, interpreted )
+
+
+
+
+
+
+
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples.hs, interpreted )
+
+
+
+
+
+
+
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples.hs, interpreted )
+
+
+
+
+
+Failed, modules loaded: none.
+Examples.hs:53:33: Could not deduce (Integral b2) arising from a use of ‘^’ …
+    from the context (RealFloat a)
+      bound by the type signature for
+                 bmiTell :: RealFloat a => a -> a -> String
+      at Examples.hs:47:12-43
+    The type variable ‘b2’ is ambiguous
+    Note: there are several potential instances:
+      instance Integral Int -- Defined in ‘GHC.Real’
+      instance Integral Integer -- Defined in ‘GHC.Real’
+      instance Integral GHC.Types.Word -- Defined in ‘GHC.Real’
+    In the second argument of ‘(/)’, namely ‘height ^ 2’
+    In the expression: weight / height ^ 2
+    In an equation for ‘bmi’: bmi = weight / height ^ 2
+Examples.hs:53:35: Could not deduce (Num b2) arising from the literal ‘2’ …
+    from the context (RealFloat a)
+      bound by the type signature for
+                 bmiTell :: RealFloat a => a -> a -> String
+      at Examples.hs:47:12-43
+    The type variable ‘b2’ is ambiguous
+    Note: there are several potential instances:
+      instance Num Double -- Defined in ‘GHC.Float’
+      instance Num Float -- Defined in ‘GHC.Float’
+      instance Integral a => Num (GHC.Real.Ratio a)
+        -- Defined in ‘GHC.Real’
+      ...plus three others
+    In the second argument of ‘(^)’, namely ‘2’
+    In the second argument of ‘(/)’, namely ‘height ^ 2’
+    In the expression: weight / height ^ 2
+Examples.hs:64:48: Could not deduce (Integral b1) arising from a use of ‘^’ …
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:62:12-43
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:64:11-53
+    The type variable ‘b1’ is ambiguous
+    Note: there are several potential instances:
+      instance Integral Int -- Defined in ‘GHC.Real’
+      instance Integral Integer -- Defined in ‘GHC.Real’
+      instance Integral GHC.Types.Word -- Defined in ‘GHC.Real’
+    In the second argument of ‘(/)’, namely ‘(height ^ 2.0)’
+    In the expression: weight / (height ^ 2.0)
+    In an equation for ‘bmi’:
+        bmi weight height = weight / (height ^ 2.0)
+Examples.hs:64:50-52: Could not deduce (Fractional b1) arising from the literal ‘2.0’ …
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:62:12-43
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:64:11-53
+    The type variable ‘b1’ is ambiguous
+    Note: there are several potential instances:
+      instance Fractional Double -- Defined in ‘GHC.Float’
+      instance Fractional Float -- Defined in ‘GHC.Float’
+      instance Integral a => Fractional (GHC.Real.Ratio a)
+        -- Defined in ‘GHC.Real’
+    In the second argument of ‘(^)’, namely ‘2.0’
+    In the second argument of ‘(/)’, namely ‘(height ^ 2.0)’
+    In the expression: weight / (height ^ 2.0)
+Examples.hs:71:27-31: Couldn't match expected type ‘[(a, a)]’ with actual type ‘(a, a)’ …
+    Relevant bindings include
+      xs :: [(a, a)] (bound at Examples.hs:71:11)
+      calcBmis' :: [(a, a)] -> [a] (bound at Examples.hs:71:1)
+    In the pattern: (w, h)
+    In a stmt of a list comprehension: (w, h) <- [xs]
+    In the expression:
+      [bmi w h |
+         (w, h) <- [xs], let bmi weight height = weight / height ^ 2]
+Examples.hs:71:82: Could not deduce (Integral b0) arising from a use of ‘^’ …
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis' :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:70:12-42
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:71:46-84
+    The type variable ‘b0’ is ambiguous
+    Note: there are several potential instances:
+      instance Integral Int -- Defined in ‘GHC.Real’
+      instance Integral Integer -- Defined in ‘GHC.Real’
+      instance Integral GHC.Types.Word -- Defined in ‘GHC.Real’
+    In the second argument of ‘(/)’, namely ‘height ^ 2’
+    In the expression: weight / height ^ 2
+    In an equation for ‘bmi’: bmi weight height = weight / height ^ 2
+Examples.hs:71:84: Could not deduce (Num b0) arising from the literal ‘2’ …
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis' :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:70:12-42
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:71:46-84
+    The type variable ‘b0’ is ambiguous
+    Note: there are several potential instances:
+      instance Num Double -- Defined in ‘GHC.Float’
+      instance Num Float -- Defined in ‘GHC.Float’
+      instance Integral a => Num (GHC.Real.Ratio a)
+        -- Defined in ‘GHC.Real’
+      ...plus three others
+    In the second argument of ‘(^)’, namely ‘2’
+    In the second argument of ‘(/)’, namely ‘height ^ 2’
+    In the expression: weight / height ^ 2
+Compilation failed.
+λ>:reload :reload
+[1 of 1] Compiling Main             ( Examples.hs, interpreted )
+
+Examples.hs:53:33:
+    Could not deduce (Integral b2) arising from a use of ‘^’
+    from the context (RealFloat a)
+      bound by the type signature for
+                 bmiTell :: RealFloat a => a -> a -> String
+      at Examples.hs:47:12-43
+    The type variable ‘b2’ is ambiguous
+    Note: there are several potential instances:
+      instance Integral Int -- Defined in ‘GHC.Real’
+      instance Integral Integer -- Defined in ‘GHC.Real’
+      instance Integral GHC.Types.Word -- Defined in ‘GHC.Real’
+    In the second argument of ‘(/)’, namely ‘height ^ 2’
+    In the expression: weight / height ^ 2
+    In an equation for ‘bmi’: bmi = weight / height ^ 2
+
+Examples.hs:53:35:
+    Could not deduce (Num b2) arising from the literal ‘2’
+    from the context (RealFloat a)
+      bound by the type signature for
+                 bmiTell :: RealFloat a => a -> a -> String
+      at Examples.hs:47:12-43
+    The type variable ‘b2’ is ambiguous
+    Note: there are several potential instances:
+      instance Num Double -- Defined in ‘GHC.Float’
+      instance Num Float -- Defined in ‘GHC.Float’
+      instance Integral a => Num (GHC.Real.Ratio a)
+        -- Defined in ‘GHC.Real’
+      ...plus three others
+    In the second argument of ‘(^)’, namely ‘2’
+    In the second argument of ‘(/)’, namely ‘height ^ 2’
+    In the expression: weight / height ^ 2
+
+Examples.hs:64:48:
+    Could not deduce (Integral b1) arising from a use of ‘^’
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:62:12-43
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:64:11-53
+    The type variable ‘b1’ is ambiguous
+    Note: there are several potential instances:
+      instance Integral Int -- Defined in ‘GHC.Real’
+      instance Integral Integer -- Defined in ‘GHC.Real’
+      instance Integral GHC.Types.Word -- Defined in ‘GHC.Real’
+    In the second argument of ‘(/)’, namely ‘(height ^ 2.0)’
+    In the expression: weight / (height ^ 2.0)
+    In an equation for ‘bmi’:
+        bmi weight height = weight / (height ^ 2.0)
+
+Examples.hs:64:50-52:
+    Could not deduce (Fractional b1) arising from the literal ‘2.0’
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:62:12-43
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:64:11-53
+    The type variable ‘b1’ is ambiguous
+    Note: there are several potential instances:
+      instance Fractional Double -- Defined in ‘GHC.Float’
+      instance Fractional Float -- Defined in ‘GHC.Float’
+      instance Integral a => Fractional (GHC.Real.Ratio a)
+        -- Defined in ‘GHC.Real’
+    In the second argument of ‘(^)’, namely ‘2.0’
+    In the second argument of ‘(/)’, namely ‘(height ^ 2.0)’
+    In the expression: weight / (height ^ 2.0)
+
+Examples.hs:71:27-31:
+    Couldn't match expected type ‘[(a, a)]’ with actual type ‘(a, a)’
+    Relevant bindings include
+      xs :: [(a, a)] (bound at Examples.hs:71:11)
+      calcBmis' :: [(a, a)] -> [a] (bound at Examples.hs:71:1)
+    In the pattern: (w, h)
+    In a stmt of a list comprehension: (w, h) <- [xs]
+    In the expression:
+      [bmi w h |
+         (w, h) <- [xs], let bmi weight height = weight / height ^ 2]
+
+Examples.hs:71:82:
+    Could not deduce (Integral b0) arising from a use of ‘^’
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis' :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:70:12-42
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:71:46-84
+    The type variable ‘b0’ is ambiguous
+    Note: there are several potential instances:
+      instance Integral Int -- Defined in ‘GHC.Real’
+      instance Integral Integer -- Defined in ‘GHC.Real’
+      instance Integral GHC.Types.Word -- Defined in ‘GHC.Real’
+    In the second argument of ‘(/)’, namely ‘height ^ 2’
+    In the expression: weight / height ^ 2
+    In an equation for ‘bmi’: bmi weight height = weight / height ^ 2
+
+Examples.hs:71:84:
+    Could not deduce (Num b0) arising from the literal ‘2’
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis' :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:70:12-42
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:71:46-84
+    The type variable ‘b0’ is ambiguous
+    Note: there are several potential instances:
+      instance Num Double -- Defined in ‘GHC.Float’
+      instance Num Float -- Defined in ‘GHC.Float’
+      instance Integral a => Num (GHC.Real.Ratio a)
+        -- Defined in ‘GHC.Real’
+      ...plus three others
+    In the second argument of ‘(^)’, namely ‘2’
+    In the second argument of ‘(/)’, namely ‘height ^ 2’
+    In the expression: weight / height ^ 2
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples.hs, interpreted )
+
+Examples.hs:64:48:
+    Could not deduce (Integral b1) arising from a use of ‘^’
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:62:12-43
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:64:11-53
+    The type variable ‘b1’ is ambiguous
+    Note: there are several potential instances:
+      instance Integral Int -- Defined in ‘GHC.Real’
+      instance Integral Integer -- Defined in ‘GHC.Real’
+      instance Integral GHC.Types.Word -- Defined in ‘GHC.Real’
+    In the second argument of ‘(/)’, namely ‘(height ^ 2.0)’
+    In the expression: weight / (height ^ 2.0)
+    In an equation for ‘bmi’:
+        bmi weight height = weight / (height ^ 2.0)
+
+Examples.hs:64:50-52:
+    Could not deduce (Fractional b1) arising from the literal ‘2.0’
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:62:12-43
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:64:11-53
+    The type variable ‘b1’ is ambiguous
+    Note: there are several potential instances:
+      instance Fractional Double -- Defined in ‘GHC.Float’
+      instance Fractional Float -- Defined in ‘GHC.Float’
+      instance Integral a => Fractional (GHC.Real.Ratio a)
+        -- Defined in ‘GHC.Real’
+    In the second argument of ‘(^)’, namely ‘2.0’
+    In the second argument of ‘(/)’, namely ‘(height ^ 2.0)’
+    In the expression: weight / (height ^ 2.0)
+
+Examples.hs:71:80:
+    Could not deduce (Integral b0) arising from a use of ‘^’
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis' :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:70:12-42
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:71:44-84
+    The type variable ‘b0’ is ambiguous
+    Note: there are several potential instances:
+      instance Integral Int -- Defined in ‘GHC.Real’
+      instance Integral Integer -- Defined in ‘GHC.Real’
+      instance Integral GHC.Types.Word -- Defined in ‘GHC.Real’
+    In the second argument of ‘(/)’, namely ‘height ^ 2.0’
+    In the expression: weight / height ^ 2.0
+    In an equation for ‘bmi’: bmi weight height = weight / height ^ 2.0
+
+Examples.hs:71:82-84:
+    Could not deduce (Fractional b0) arising from the literal ‘2.0’
+    from the context (RealFloat a)
+      bound by the type signature for
+                 calcBmis' :: RealFloat a => [(a, a)] -> [a]
+      at Examples.hs:70:12-42
+    or from (Fractional a1)
+      bound by the inferred type of
+               bmi :: Fractional a1 => a1 -> a1 -> a1
+      at Examples.hs:71:44-84
+    The type variable ‘b0’ is ambiguous
+    Note: there are several potential instances:
+      instance Fractional Double -- Defined in ‘GHC.Float’
+      instance Fractional Float -- Defined in ‘GHC.Float’
+      instance Integral a => Fractional (GHC.Real.Ratio a)
+        -- Defined in ‘GHC.Real’
+    In the second argument of ‘(^)’, namely ‘2.0’
+    In the second argument of ‘(/)’, namely ‘height ^ 2.0’
+    In the expression: weight / height ^ 2.0
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples.hs, interpreted )
+Ok, modules loaded: Main.
+λ> quicksort [1,4,8,3,8,0,5,3,5,8,9]
+[0,1,3,3,4,5,5,8,8,8,9]
+λ> :load Examples_2.hs
+[1 of 1] Compiling Main             ( Examples_2.hs, interpreted )
+Ok, modules loaded: Main.
+λ> inc 1
+2
+λ> :reload
+[1 of 1] Compiling Main             ( Examples_2.hs, interpreted )
+
+Examples_2.hs:3:1:
+    parse error (possibly incorrect indentation or mismatched brackets)
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples_2.hs, interpreted )
+
+Examples_2.hs:2:7-9:
+    Not in scope: ‘add’
+    Perhaps you meant one of these:
+      ‘odd’ (imported from Prelude), ‘and’ (imported from Prelude)
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples_2.hs, interpreted )
+Ok, modules loaded: Main.
+λ> inc 1
+2
+λ> inc 3
+4
+λ> :reload
+[1 of 1] Compiling Main             ( Examples_2.hs, interpreted )
+Ok, modules loaded: Main.
+λ> inc 3
+4
+λ> :type elem
+elem :: Eq a => a -> [a] -> Bool
+λ> :reload
+[1 of 1] Compiling Main             ( Examples_2.hs, interpreted )
+
+Examples_2.hs:8:16-21:
+    Syntax error on 'elem'
+    Perhaps you intended to use TemplateHaskell
+    In the Template Haskell quotation 'elem'
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples_2.hs, interpreted )
+
+Examples_2.hs:8:24-26:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the expression: "A"
+    In the second argument of ‘elem’, namely ‘["A" .. "Z"]’
+    In the expression: (`elem` ["A" .. "Z"])
+
+Examples_2.hs:8:29-31:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the expression: "Z"
+    In the second argument of ‘elem’, namely ‘["A" .. "Z"]’
+    In the expression: (`elem` ["A" .. "Z"])
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples_2.hs, interpreted )
+
+Examples_2.hs:8:24-26:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the expression: "A"
+    In the second argument of ‘elem’, namely ‘["A" .. "Z"]’
+    In the expression: (`elem` ["A" .. "Z"])
+
+Examples_2.hs:8:29-31:
+    Couldn't match expected type ‘Char’ with actual type ‘[Char]’
+    In the expression: "Z"
+    In the second argument of ‘elem’, namely ‘["A" .. "Z"]’
+    In the expression: (`elem` ["A" .. "Z"])
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples_2.hs, interpreted )
+Ok, modules loaded: Main.
+λ> applyTwice inc 1
+3
+λ> applyTwice inc 2
+4
+λ> applyTwice (*2) 2
+8
+λ> applyTwice (++ "Hoo") "Ho"
+"HoHooHoo"
+λ> :reload
+[1 of 1] Compiling Main             ( Examples_2.hs, interpreted )
+
+Examples_2.hs:14:17:
+    Couldn't match expected type ‘a’ with actual type ‘b’
+      ‘b’ is a rigid type variable bound by
+          the type signature for flip' :: (a -> b -> c) -> a -> b -> c
+          at Examples_2.hs:13:9
+      ‘a’ is a rigid type variable bound by
+          the type signature for flip' :: (a -> b -> c) -> a -> b -> c
+          at Examples_2.hs:13:9
+    Relevant bindings include
+      y :: b (bound at Examples_2.hs:14:11)
+      x :: a (bound at Examples_2.hs:14:9)
+      f :: a -> b -> c (bound at Examples_2.hs:14:7)
+      flip' :: (a -> b -> c) -> a -> b -> c (bound at Examples_2.hs:14:1)
+    In the first argument of ‘f’, namely ‘y’
+    In the expression: f y x
+Failed, modules loaded: none.
+λ> :reload
+[1 of 1] Compiling Main             ( Examples_2.hs, interpreted )
+Ok, modules loaded: Main.
+λ> flip' zip [1,2,3,4,5] "Hello"
+[('H',1),('e',2),('l',3),('l',4),('o',5)]
+Restarting process ...
+The lambdas must flow.
+If I break, you can:
+  1. Restart:           M-x haskell-process-restart
+  2. Configure logging: C-h v haskell-process-log (useful for debugging)
+  3. General config:    M-x customize-mode
+  4. Hide these tips:   C-h v haskell-process-show-debug-tips
+Changed directory: /Volumes/Internet/Cursos/courses/haskell/learnHaskell/
+Restarting process ...
+The lambdas must flow.
+If I break, you can:
+  1. Restart:           M-x haskell-process-restart
+  2. Configure logging: C-h v haskell-process-log (useful for debugging)
+  3. General config:    M-x customize-mode
+  4. Hide these tips:   C-h v haskell-process-show-debug-tips
+Changed directory: /Volumes/Internet/Cursos/courses/haskell/learnHaskell/
+λ>map (+2) [1,2,3,4,5] 

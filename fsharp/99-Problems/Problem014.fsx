@@ -17,11 +17,13 @@ let rec multiplicate elements numberOfTimes =
                multiplicate (element::elements) (numberOfTimes - 1)
 
 let rec multiplicateSeqElement acc numberOfTimes = function
-    | [] -> acc
+    | [] -> List.rev acc
     | hd::tl ->
-        let newAcc = (multiplicate hd numberOfTimes)::acc
-        multiplicateSeqElement newAcc  numberOfTimes tl
+        let newAcc = (multiplicate [hd] numberOfTimes)::acc
+        multiplicateSeqElement newAcc numberOfTimes tl
 
-multiplicateSeqElement [] 2 [1;2] |> printfn "%A"
+multiplicateSeqElement [] 2 [1] |> printfn "%A"
 
-(*Not finish*)
+seq |> List.fold (fun acc next -> (multiplicate [next] 2)::acc) []
+    |> List.rev
+    |> printfn "%A"
